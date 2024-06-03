@@ -1,0 +1,9 @@
+### create User
+POST http://localhost:63501/users
+Content-Type: application/json
+
+{
+  "name": "hwan1",
+  "email": "abc1231@gamil.com",
+  "pwd": "abcd1234"
+}

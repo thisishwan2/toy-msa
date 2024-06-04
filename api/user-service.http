@@ -1,9 +1,17 @@
 ### create User
-POST http://localhost:63501/users
+POST http://localhost:8000/user-service/users
 Content-Type: application/json
 
 {
-  "name": "hwan1",
-  "email": "abc1231@gamil.com",
-  "pwd": "abcd1234"
+  "name": "pilhwan123",
+  "email": "aaa1@naver23.com",
+  "pwd": "abcd123411123"
 }
+
+### get Users
+GET http://localhost:8000/user-service/users
+Content-Type: application/json
+
+### get User
+GET http://localhost:8000/user-service/users/bf05bf92-5645-42a1-9e82-eaeaa9457418
+Content-Type: application/json

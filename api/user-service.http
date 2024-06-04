@@ -3,9 +3,9 @@ POST http://localhost:8000/user-service/users
 Content-Type: application/json
 
 {
-  "name": "pilhwan123",
-  "email": "aaa1@naver23.com",
-  "pwd": "abcd123411123"
+  "name": "pilhwan",
+  "email": "aaa1@naver.com",
+  "pwd": "abcd1234"
 }
 
 ### get Users

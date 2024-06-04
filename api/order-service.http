@@ -1,0 +1,13 @@
+### create - order
+POST http://localhost:8000/order-service/4a6a8fc7-6517-4b5d-8a22-d4c5e4110666/orders
+Content-Type: application/json
+
+{
+  "productId": "CATALOG-001",
+  "qty": 10,
+  "unitPrice": 1500
+}
+
+### get - orders(userId)
+GET http://localhost:8000/order-service/4a6a8fc7-6517-4b5d-8a22-d4c5e4110666/orders
+content-type: application/json

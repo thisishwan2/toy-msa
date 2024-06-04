@@ -33,7 +33,7 @@ public class WebSecurity {
         http.authorizeHttpRequests((authz) -> authz
                                 .requestMatchers(new AntPathRequestMatcher("/actuator/**")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/h2-console/**")).permitAll()
-                                .requestMatchers(new AntPathRequestMatcher("/users/**", "POST")).permitAll()
+                                .requestMatchers(new AntPathRequestMatcher("/user-service/**")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/h2-console/**")).permitAll()
                 )
                 .sessionManagement((session) -> session

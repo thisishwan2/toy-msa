@@ -4,6 +4,7 @@ import com.example.userservice.dto.UserDto;
 import com.example.userservice.jpa.UserEntity;
 import com.example.userservice.service.UserService;
 import com.example.userservice.vo.Greeting;
+import com.example.userservice.vo.RequestLogin;
 import com.example.userservice.vo.RequestUser;
 import com.example.userservice.vo.ResponseUser;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/user-service")
+@RequestMapping("/")
 @RequiredArgsConstructor
 public class UserController {
 
@@ -68,4 +69,10 @@ public class UserController {
         ResponseUser responseUser = new ModelMapper().map(userdto, ResponseUser.class);
         return ResponseEntity.status(HttpStatus.OK).body(responseUser);
     }
+
+//    @PostMapping("/login")
+//    public ResponseEntity<Responsea> login(@RequestBody RequestLogin requestLogin){
+//        userService.login(requestLogin);
+//        return ResponseEntity.status(HttpStatus.OK).body(new Responsea("login success"));
+//    }
 }

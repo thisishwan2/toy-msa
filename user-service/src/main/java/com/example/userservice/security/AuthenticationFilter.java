@@ -42,6 +42,7 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
                     )
             );
         } catch (IOException e) {
+            log.info(e.getMessage());
             throw new RuntimeException(e);
         }
     }

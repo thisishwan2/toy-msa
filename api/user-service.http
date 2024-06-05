@@ -15,3 +15,4 @@ Content-Type: application/json
 ### get User
 GET http://localhost:8000/user-service/users/bf05bf92-5645-42a1-9e82-eaeaa9457418
 Content-Type: application/json
+

@@ -69,10 +69,4 @@ public class UserController {
         ResponseUser responseUser = new ModelMapper().map(userdto, ResponseUser.class);
         return ResponseEntity.status(HttpStatus.OK).body(responseUser);
     }
-
-//    @PostMapping("/login")
-//    public ResponseEntity<Responsea> login(@RequestBody RequestLogin requestLogin){
-//        userService.login(requestLogin);
-//        return ResponseEntity.status(HttpStatus.OK).body(new Responsea("login success"));
-//    }
 }

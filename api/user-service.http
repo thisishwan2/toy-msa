@@ -39,3 +39,19 @@ Content-Type: application/json
 GET http://localhost:8000/user-service/welcome
 Content-Type: application/json
 Authorization: Bearer {{token}}
+
+### health-check
+GET http://localhost:8000/user-service/health-check
+Content-Type: application/json
+
+### actuator/health
+GET http://localhost:8000/user-service/actuator/health
+Content-Type: application/json
+
+### actuator/beans
+GET http://localhost:8000/user-service/actuator/beans
+Content-Type: application/json
+
+### actuator/refresh
+POST http://localhost:8000/user-service/actuator/refresh
+Content-Type: application/json

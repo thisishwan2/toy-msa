@@ -1,0 +1,16 @@
+### Encrypt
+POST http://localhost:8888/encrypt
+Content-Type: text/plain
+
+ran
+
+> {%
+    client.log(response.body); // 응답받은 body를 로깅
+    client.global.set("encrypt_key", response.body) // 토큰 값을 global 변수에 set
+%}
+
+### Decrypt
+POST http://localhost:8888/decrypt
+Content-Type: text/plain
+// 한줄 띄어줘야함
+{{encrypt_key}}

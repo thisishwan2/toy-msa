@@ -1,2 +1,6 @@
-encrypt:
-  key: abcdefghijklmnopqrstuvwxyz0123456789
+#encrypt:
+##  key: abcdefghijklmnopqrstuvwxyz0123456789
+#    key-store:
+#        location: "../../../../../keystore/apiEncryptionKey.jks"
+#        password: 1q2w3e4r
+#        alias: apiEncryptionKey

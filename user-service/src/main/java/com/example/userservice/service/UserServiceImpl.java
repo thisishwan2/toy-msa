@@ -1,5 +1,6 @@
 package com.example.userservice.service;
 
+import com.example.userservice.client.OrderServiceClient;
 import com.example.userservice.dto.UserDto;
 import com.example.userservice.jpa.UserEntity;
 import com.example.userservice.jpa.UserRepository;
@@ -30,6 +31,7 @@ public class UserServiceImpl implements UserService {
     private final BCryptPasswordEncoder passwordEncoder; // bCryptPasswordEncoder를 빈으로 등록해줘야함.(UserServiceApplication.java)
     private final RestTemplate restTemplate;
     private final Environment env;
+    private final OrderServiceClient orderServiceClient;
 
     @Override
     public UserDto createUser(UserDto userDto) {
@@ -56,15 +58,18 @@ public class UserServiceImpl implements UserService {
 //        List<ResponseOrder> orders = new ArrayList<>();
 
         /* using rest template */
-        String orderUrl = String.format(env.getProperty("order_service.url"), userId);
+//        String orderUrl = String.format(env.getProperty("order_service.url"), userId);
+//
+//        // url, method, 요청 파라미터, 응답 타입
+//        ResponseEntity<List<ResponseOrder>> orderListResponse =
+//                restTemplate.exchange(orderUrl, HttpMethod.GET, null,
+//                        new ParameterizedTypeReference<List<ResponseOrder>>() {
+//                });
+//
+//        List<ResponseOrder> orders = orderListResponse.getBody();
 
-        // url, method, 요청 파라미터, 응답 타입
-        ResponseEntity<List<ResponseOrder>> orderListResponse =
-                restTemplate.exchange(orderUrl, HttpMethod.GET, null,
-                        new ParameterizedTypeReference<List<ResponseOrder>>() {
-                });
-
-        List<ResponseOrder> orders = orderListResponse.getBody();
+        /* using feign client */
+        List<ResponseOrder> orders = orderServiceClient.getOrders(userId);
         userDto.setOrders(orders);
 
         return userDto;

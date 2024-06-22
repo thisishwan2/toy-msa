@@ -1,5 +1,5 @@
 ### create - order
-POST http://localhost:8000/order-service/4a6a8fc7-6517-4b5d-8a22-d4c5e4110666/orders
+POST http://localhost:8000/order-service/0018ed0f-67f0-4c5d-8b81-4adb8a9fa55b/orders
 Content-Type: application/json
 
 {
@@ -9,5 +9,5 @@ Content-Type: application/json
 }
 
 ### get - orders(userId)
-GET http://localhost:8000/order-service/4a6a8fc7-6517-4b5d-8a22-d4c5e4110666/orders
+GET http://localhost:8000/order-service/802880b0-d1d4-4875-a7aa-31c84f1b2aba/orders
 content-type: application/json

@@ -13,7 +13,8 @@ GET http://localhost:8000/user-service/users
 Content-Type: application/json
 
 ### get User
-GET http://localhost:8000/user-service/users/bf05bf92-5645-42a1-9e82-eaeaa9457418
+GET http://localhost:8000/user-service/users/0018ed0f-67f0-4c5d-8b81-4adb8a9fa55b
+Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ### login Users

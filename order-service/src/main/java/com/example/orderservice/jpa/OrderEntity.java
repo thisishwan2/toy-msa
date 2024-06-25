@@ -5,6 +5,7 @@ import lombok.Data;
 import org.hibernate.annotations.ColumnDefault;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Data
@@ -28,7 +29,7 @@ public class OrderEntity implements Serializable {
     private String userId;
     @Column(nullable = false, unique = true)
     private String orderId;
-    @Column(nullable = false, updatable = false, insertable = false)
+    @Column(nullable = false, updatable = false, insertable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     @ColumnDefault(value = "CURRENT_TIMESTAMP")
-    private Date createdAt;
+    private LocalDateTime createdAt;
 }

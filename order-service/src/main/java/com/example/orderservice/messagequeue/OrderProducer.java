@@ -21,11 +21,10 @@ public class OrderProducer {
     List<Field> fields = Arrays.asList(new Field("string", true, "order_id"),
             new Field("string", true, "user_id"),
             new Field("string", true, "product_id"),
-            new Field("int", true, "qty"),
-            new Field("int", true, "unit_price"),
-            new Field("int", true, "total_price"),
-            new Field("string", true, "order_at"),
-            new Field("string", true, "order_status"));
+            new Field("int32", true, "qty"),
+            new Field("int32", true, "unit_price"),
+            new Field("int32", true, "total_price"));
+    // kafka에서 int32 혹은 64로 받기때문에 주의
 
     Schema schema = Schema.builder()
             .type("struct")

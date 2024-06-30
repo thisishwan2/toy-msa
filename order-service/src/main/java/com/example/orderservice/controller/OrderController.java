@@ -64,13 +64,21 @@ public class OrderController {
     }
 
     @GetMapping("/{userId}/orders")
-    public ResponseEntity<List<ResponseOrder>> getOrders(@PathVariable String userId){
+    public ResponseEntity<List<ResponseOrder>> getOrders(@PathVariable String userId) throws Exception {
         log.info("Before retrieve orders data");
         Iterable<OrderEntity> orderList = orderService.getOrdersByUserId(userId);
         List<ResponseOrder> result = new ArrayList<>();
         orderList.forEach(v -> {
             result.add(new ModelMapper().map(v, ResponseOrder.class));
         });
+
+        try{
+            Thread.sleep(2000);
+            throw new Exception("장애 발생");
+        } catch (InterruptedException ex){
+            log.warn(ex.getMessage());
+        }
+
         log.info("After retrieve orders data");
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }

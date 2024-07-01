@@ -6,6 +6,7 @@ import com.example.userservice.service.UserService;
 import com.example.userservice.vo.Greeting;
 import com.example.userservice.vo.RequestUser;
 import com.example.userservice.vo.ResponseUser;
+import io.micrometer.core.annotation.Timed;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
@@ -27,6 +28,7 @@ public class UserController {
     private final Greeting greeting;
 
     @GetMapping("/health-check")
+    @Timed(value = "users.status", longTask = true)
     public String status(){
         return String.format("User service on Port %s", env.getProperty("local.server.port")
                 + ", port(sserver.port)=" + env.getProperty("server.port")
